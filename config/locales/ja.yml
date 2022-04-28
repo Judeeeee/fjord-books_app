@@ -1,0 +1,33 @@
+ja:
+  books:
+    table:
+      title: タイトル
+      memo: メモ
+      author: 著者
+      picture: 写真
+    link:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      create: 新規作成
+      back: 本一覧に戻る
+      show: 詳細へ
+      edit: 編集へ
+    index:
+      title: 本一覧
+    new:
+      title: 登録
+    edit:
+      title: 編集
+
+  activerecord:
+    attributes:
+      book:
+        title: "本のタイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "写真"
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
