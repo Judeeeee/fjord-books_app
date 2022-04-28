@@ -7,6 +7,10 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    @show = t('books.link.show')
+    @edit = t('books.link.edit')
+    @destroy = t('books.link.destroy')
+    @create = t('books.link.create')
   end
 
   # GET /books/1
