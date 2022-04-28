@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @back = t('books.link.back')
   end
 
   # GET /books/1/edit
