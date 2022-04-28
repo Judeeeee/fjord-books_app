@@ -27,7 +27,10 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit; end
+  def edit
+    @show = t('books.link.show')
+    @back = t('books.link.back')
+  end
 
   # POST /books
   # POST /books.json
