@@ -23,11 +23,11 @@ en:
   activerecord:
     attributes:
       book:
-        title: "Book Title"
-        memo: "Memo"
-        author: "Author"
-        picture: "Picture"
+        title: Book Title
+        memo: Memo
+        author: Author
+        picture: Picture
   helpers:
     submit:
-      create: "submit"
-      update: "Update"
+      create: submit
+      update: Update
