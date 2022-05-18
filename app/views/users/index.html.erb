@@ -17,3 +17,5 @@
 </table>
 <%= paginate @users %>
 <table>
+<%= current_user.id %>
+<%= link_to '自分のページへ', "/users/#{current_user.id}"  %>

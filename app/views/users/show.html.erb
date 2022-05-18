@@ -32,7 +32,5 @@
 </p>
 
 <% if current_user.id == params[:id].to_i%>
-  <%= link_to "自分のプロフィールを編集する", edit_user_path(@user) %>
-<% else %>
-  <p>自分のプロフィールではないので、編集はできない</p>
+  <%= link_to "自分のプロフィールを編集する", edit_user_registration_path(@user) %>
 <% end %>
