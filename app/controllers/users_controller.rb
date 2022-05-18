@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_book
-    @book = User.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
-  def book_params
-    params.require(:book).permit(:title, :memo, :author, :picture)
+  def user_params
+    params.require(:user).permit(:title, :memo, :author, :picture)
   end
 end
