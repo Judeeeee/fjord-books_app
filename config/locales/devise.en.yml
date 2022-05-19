@@ -1,6 +1,13 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
 en:
+  activerecord:
+    attributes:
+      user:
+        name: "name"
+        zip_code: "zip_code"
+        self_introduction: "self_introduction"
+        address: "address"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
