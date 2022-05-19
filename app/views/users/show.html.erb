@@ -23,3 +23,4 @@
 <% if current_user.id == params[:id].to_i%>
   <%= link_to "自分のプロフィールを編集する", edit_user_registration_path(@user) %>
 <% end %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

@@ -18,3 +18,4 @@
 <%= paginate @users %>
 <table>
 <%= link_to '自分のページへ', "/users/#{current_user.id}"  %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
