@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t('books.table.title') %></strong>
+  <strong><%= book.title %></strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong><%= t('books.table.memo') %></strong>
+  <strong><%= book.memo %></strong>
   <%= @book.memo %>
 </p>
 
 <p>
-  <strong><%= t('books.table.author') %></strong>
+  <strong><%= book.author %></strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong><%= t('books.table.picture') %></strong>
+  <strong><%= book.author %></strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
