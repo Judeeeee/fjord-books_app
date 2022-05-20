@@ -1,24 +1,16 @@
 en:
-  books:
-    table:
-      title: Title
-      memo: Memo
-      author: Author
-      picture: Picture
-    link:
-      show: Show
-      edit: Edit
-      destroy: Destroy
-      create: Create
-      back: Back
-      show: Show
-      edit: Edit
-    index:
-      title: Book list
-    new:
-      title: Registration
-    edit:
-      title: Edit
+  link:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    create: Create
+    back: Back
+    show: Show
+    edit: Edit
+  title:
+    index: Book list
+    new: Registration
+    edit: Edit
 
   activerecord:
     attributes:
