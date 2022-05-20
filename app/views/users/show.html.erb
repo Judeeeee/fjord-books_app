@@ -21,6 +21,6 @@
 </p>
 
 <% if current_user.id == params[:id].to_i%>
-  <%= link_to "自分のプロフィールを編集する", edit_user_registration_path(@user) %>
+  <%= link_to t('devise.shared.links.my_page_edit'), edit_user_registration_path(@user) %>
 <% end %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>

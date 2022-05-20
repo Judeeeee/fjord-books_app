@@ -128,6 +128,10 @@ ja:
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
+        sign_out: ログアウト
+        my_page: 自分のプロフィールページへ
+        my_page_edit: プロフィールを編集する
+        user_list_page: ユーザー一覧ページへ
       minimum_password_length: "（%{count}字以上）"
     unlocks:
       new:
