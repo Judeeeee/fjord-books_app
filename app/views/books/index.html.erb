@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th><%= book.title %></th>
-      <th><%= book.memo %></th>
-      <th><%= book.author %></th>
-      <th><%= book.picture %></th>
+      <th><%= Book.human_attribute_name("title") %></th>
+      <th><%= Book.human_attribute_name("memo") %></th>
+      <th><%= Book.human_attribute_name("author") %></th>
+      <th><%= Book.human_attribute_name("picture") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
