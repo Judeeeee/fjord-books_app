@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('books.index.title') %></h1>
+<h1><%= t('title.index') %></h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to t('books.link.show'), book %></td>
-        <td><%= link_to t('books.link.edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('books.link.destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('link.show'), book %></td>
+        <td><%= link_to t('link.edit'), edit_book_path(book) %></td>
+        <td><%= link_to t('link.destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to t('books.link.create'), new_book_path %>
+<%= link_to t('link.create'), new_book_path %>

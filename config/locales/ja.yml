@@ -5,20 +5,18 @@ ja:
       memo: メモ
       author: 著者
       picture: 写真
-    link:
-      show: 詳細
-      edit: 編集
-      destroy: 削除
-      create: 新規作成
-      back: 本一覧に戻る
-      show: 詳細へ
-      edit: 編集へ
-    index:
-      title: 本一覧
-    new:
-      title: 登録
-    edit:
-      title: 編集
+  link:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    create: 新規作成
+    back: 本一覧に戻る
+    show: 詳細へ
+    edit: 編集へ
+  title:
+    index: 本一覧
+    new: 登録
+    edit: 編集
 
   activerecord:
     attributes:
