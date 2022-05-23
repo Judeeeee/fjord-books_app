@@ -65,6 +65,6 @@ class IconsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def icon_params
-      params.fetch(:icon, {})
+      params.fetch(:icon, {}).permit(:avatar)
     end
 end
