@@ -1,0 +1,17 @@
+<%= form_with(model: icon) do |form| %>
+  <% if icon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(icon.errors.count, "error") %> prohibited this icon from being saved:</h2>
+
+      <ul>
+        <% icon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
