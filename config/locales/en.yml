@@ -8,14 +8,14 @@ en:
     show: Show
     edit: Edit
   title:
-    index: Book list
+    index: List
     new: Registration
     edit: Edit
 
   activerecord:
     attributes:
       book:
-        title: Book Title
+        title: Title
         memo: Memo
         author: Author
         picture: Picture
