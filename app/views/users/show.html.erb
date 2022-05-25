@@ -29,3 +29,7 @@
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
 <%= link_to t('views.common.back'), users_path %>
+
+<% if @user.avater.attached? %>
+  <%= image_tag @user.avater %>
+<% end %>
