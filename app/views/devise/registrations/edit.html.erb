@@ -33,6 +33,10 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.file_field :avater %><br>
+  </div>
+
   <div class="actions">
     <%= f.submit t('.update') %>
   </div>
@@ -41,5 +45,4 @@
 <h3><%= t('.cancel_my_account') %></h3>
 
 <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('views.common.delete_confirm') }, method: :delete %></p>
-
 <%= link_to t('devise.shared.links.back'), :back %>
