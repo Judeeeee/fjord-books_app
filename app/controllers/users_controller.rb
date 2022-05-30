@@ -7,7 +7,11 @@ class UsersController < ApplicationController
     @users = User.order(:id).page(params[:page])
   end
 
-  def show; end
+  def show
+    @current_user = current_user.id
+    @user_id = params[:id].to_i
+
+  end
 
   private
 
