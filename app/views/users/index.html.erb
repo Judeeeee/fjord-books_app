@@ -17,5 +17,5 @@
 </table>
 <%= paginate @users %>
 <table>
-<%= link_to t('devise.shared.links.my_page'), "/users/#{current_user.id}"  %>
+<%= link_to t('devise.shared.links.my_page'), "/users/#{current_user.id}" %>
 <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
