@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<h2><%= t('devise.passwords.edit.change_my_password') %></h2>
 
 <%= form_with model: @user, url: edit_user_password_path, id: 'edit_user', class: 'edit_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
