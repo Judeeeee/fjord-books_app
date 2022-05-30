@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def show
     @current_user = current_user.id
     @user_id = params[:id].to_i
-
   end
 
   private
