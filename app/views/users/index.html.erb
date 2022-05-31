@@ -1,0 +1,21 @@
+<h1>ユーザー一覧ページ</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to "詳細ページへ", user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @users %>
+<table>
+<%= link_to t('devise.shared.links.my_page'), current_user %>
+<%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>

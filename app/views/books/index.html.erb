@@ -33,3 +33,5 @@
 <br>
 
 <%= link_to t('views.common.new'), new_book_path %>
+<%= link_to t('devise.shared.links.user_list_page'), users_path %>
+<%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
