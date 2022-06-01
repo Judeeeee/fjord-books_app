@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
+  has_many :active_relationships, class_name: "Userrelationship"
+  has_many :passive_relationships, class_name: "Userrelationship"
 end
