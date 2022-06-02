@@ -33,6 +33,20 @@
   <% end %>
 </p>
 
+<p>フォロー数:<%= @following_count %></p>
+<p>フォロワー数:<%= @followers_count %></p>
+
+<% if current_user != @user %>
+  <% if @user.followed_by?(current_user) %>
+    <p><%=link_to "フォロー解除", user_userrelationships_path(@user.id), method: :delete %></p>
+  <% else %>
+    <p><%=link_to "フォローする", user_userrelationships_path(@user.id), method: :post %></p>
+  <% end %>
+<% end %>
+
+<%= link_to "フォローしている人", user_follows_path(@user) %>
+<%= link_to "フォローされている人", user_followers_path(@user) %>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
