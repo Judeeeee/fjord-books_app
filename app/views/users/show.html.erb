@@ -44,8 +44,8 @@
   <% end %>
 <% end %>
 
-<%= link_to "フォローしている人", follows_user_path %>
-<%= link_to "フォローされている人", followers_user_path %>
+<%= link_to "フォローしている人", user_follows_path(@user) %>
+<%= link_to "フォローされている人", user_followers_path(@user) %>
 
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
