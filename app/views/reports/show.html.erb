@@ -10,12 +10,12 @@
   <%= @report.article %>
 </p>
 
+<h2>コメント一覧</h2>
 <% @report_comments.each do |report_comment| %>
-  <p>コメント:<%=report_comment.chat%></br></p>
-  <p>投稿日時:<%=report_comment.created_at%></br></p>
-  <p>投稿者:<%=report_comment.posted_user_name%></br></p>
+  <p>投稿日時:<%=report_comment.created_at%></p><p>投稿者:<%=report_comment.posted_user_name%></p><p>コメント:<%=report_comment.chat%></p></br>
 <%end%>
 
+<h3>コメントを投稿する</h3>
 <%= render 'comments/form', commentable: @report, comment: @comments %>
 
 <% if @report.report_posted_user_id == current_user.id%>

@@ -20,13 +20,12 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<h2>コメント一覧</h2>
 <% @book_comments.each do |book_comment| %>
-  <p>コメント:<%=book_comment.chat%></br></p>
-  <p>投稿日時:<%=book_comment.created_at%></br></p>
-  <p>投稿者:<%=book_comment.posted_user_name%></br></p>
+  <p>投稿日時:<%=book_comment.created_at%></p><p>投稿者:<%=book_comment.posted_user_name%></p><p>コメント:<%=book_comment.chat%></p></br>
 <%end%>
 
-
+<h3>コメントを投稿する</h3>
 <%= render 'comments/form', commentable: @book, comment: @comments %>
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
