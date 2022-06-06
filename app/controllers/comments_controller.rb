@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
+    @commentable = Book.find(params[:book_id])
+    @comment = @commentable.comments.build(comment_params)
     @comment.save
-    debugger
     redirect_to '/'
   end
 

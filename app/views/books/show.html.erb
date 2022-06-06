@@ -31,6 +31,9 @@
   </div>
 <% end %>
 
+<% @book_comments.each do |book_comment| %>
+  <p>コメント:<%=book_comment.chat%></br></p>
+<%end%>
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
