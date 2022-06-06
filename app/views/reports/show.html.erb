@@ -13,6 +13,7 @@
 <% @report_comments.each do |report_comment| %>
   <p>コメント:<%=report_comment.chat%></br></p>
   <p>投稿日時:<%=report_comment.created_at%></br></p>
+  <p>投稿者:<%=report_comment.posted_user_name%></br></p>
 <%end%>
 
 <%= render 'comments/form', commentable: @report, comment: @comments %>

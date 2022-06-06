@@ -23,6 +23,7 @@
 <% @book_comments.each do |book_comment| %>
   <p>コメント:<%=book_comment.chat%></br></p>
   <p>投稿日時:<%=book_comment.created_at%></br></p>
+  <p>投稿者:<%=book_comment.posted_user_name%></br></p>
 <%end%>
 
 

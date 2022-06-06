@@ -1,5 +1,7 @@
 <%= form_with model: [commentable, Comment.new] do |f| %>
   <%= f.text_area :chat %>
+  <%= f.label :posted_user_name %>
+  <%= f.text_area :posted_user_name %>
   <div class="actions">
     <%= f.submit "コメントをする", class: 'btn btn-warning px-5' %>
   </div>
