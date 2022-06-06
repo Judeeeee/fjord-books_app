@@ -23,7 +23,7 @@ class ReportsController < ApplicationController
   # POST /reports or /reports.json
   def create
     @report = Report.new(report_params)
-
+    @report.report_posted_user_id = current_user.id
     respond_to do |format|
       if @report.save
         format.html { redirect_to report_url(@report), notice: "Report was successfully created." }
@@ -66,6 +66,6 @@ class ReportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def report_params
-      params.require(:report).permit(:title, :article)
+      params.require(:report).permit(:title, :article, :report_posted_user_id)
     end
 end
