@@ -2,8 +2,7 @@
 
 class UsersController < ApplicationController
   def index
-    @users = User.with_attached_avater
-    @pagenate_users = User.order(:id).page(params[:page])
+    @users = User.with_attached_avater.order(:id).page(params[:page])
   end
 
   def show
