@@ -76,6 +76,41 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '戻る'
   end
 
+
+  test 'updating a Report but fill in title only' do
+    visit edit_report_url(@report)
+
+    fill_in 'タイトル', with: 'ありすのにっぽう'
+    fill_in '内容', with: ''
+    click_button '更新する'
+
+    assert_text '内容を入力してください'
+    click_on '戻る'
+  end
+
+  test 'updating a Report but fill in content only' do
+    visit edit_report_url(@report)
+
+    fill_in 'タイトル', with: ''
+    fill_in '内容', with: 'きょうはてんきがよかった〜！'
+    click_button '更新する'
+
+    assert_text 'タイトルを入力してください'
+    click_on '戻る'
+  end
+
+  test 'updating a Report but do not fill in form' do
+    visit edit_report_url(@report)
+
+    fill_in 'タイトル', with: ''
+    fill_in '内容', with: ''
+    click_button '更新する'
+
+    assert_text 'タイトルを入力してください'
+    assert_text '内容を入力してください'
+    click_on '戻る'
+  end
+
   test 'destroying a Report' do
     visit reports_url
     page.accept_confirm do
