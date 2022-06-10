@@ -30,6 +30,40 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '戻る'
   end
 
+  test 'creating a Report but fill in title only' do
+    visit new_report_path
+
+    fill_in 'タイトル', with: 'アリスの日報'
+    fill_in '内容', with: ''
+    click_button '登録する'
+
+    assert_text '内容を入力してください'
+    click_on '戻る'
+  end
+
+  test 'creating a Report but fill in content only' do
+    visit new_report_path
+
+    fill_in 'タイトル', with: ''
+    fill_in '内容', with: '今日は天気がよかった〜！'
+    click_button '登録する'
+
+    assert_text 'タイトルを入力してください'
+    click_on '戻る'
+  end
+
+  test 'creating a Report but do not fill in form' do
+    visit new_report_path
+
+    fill_in 'タイトル', with: ''
+    fill_in '内容', with: ''
+    click_button '登録する'
+
+    assert_text 'タイトルを入力してください'
+    assert_text '内容を入力してください'
+    click_on '戻る'
+  end
+
   test 'updating a Report' do
     visit reports_url
     click_on '編集', match: :prefer_exact
