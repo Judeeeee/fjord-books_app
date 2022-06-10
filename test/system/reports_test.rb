@@ -50,4 +50,17 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が削除されました。'
   end
+
+
+  test 'move from create report page to reports page' do
+    visit new_report_path
+    click_on '戻る'
+  end
+
+  test 'move from updating report page to reports page' do
+    visit edit_report_url(@report)
+    click_on '戻る'
+  end
+
+
 end
