@@ -63,4 +63,27 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
 
+ test 'visiting the report page' do
+    visit reports_url
+    click_on '詳細', match: :first
+
+    assert_selector 'h1', text: '日報の詳細'
+    click_on '戻る'
+ end
+
+
+ test 'move from report page to reports page' do
+   visit report_url(@report)
+   click_on '編集', match: :prefer_exact
+
+   click_on '戻る'
+ end
+
+
+ test 'move from updating report page to report page' do
+   visit edit_report_url(@report)
+   click_on '詳細', match: :first
+
+   click_on '戻る'
+ end
 end
