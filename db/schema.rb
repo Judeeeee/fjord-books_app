@@ -59,21 +59,21 @@ ActiveRecord::Schema.define(version: 2022_06_06_064657) do
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer "following_id", null: false
-    t.integer "follower_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
-    t.index ["following_id"], name: "index_relationships_on_following_id"
-  end
-
   create_table "reports", force: :cascade do |t|
     t.string "title"
     t.text "article"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "report_posted_user_id"
+  end
+
+  create_table "user_relationships", force: :cascade do |t|
+    t.integer "following_id", null: false
+    t.integer "follower_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "following_id"], name: "index_user_relationships_on_follower_id_and_following_id", unique: true
+    t.index ["following_id"], name: "index_user_relationships_on_following_id"
   end
 
   create_table "users", force: :cascade do |t|
