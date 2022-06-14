@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
       @comment.posted_user_name = current_user.email
     end
-    @comment.save
+    @comment.save!
     redirect_to '/'
   end
 
