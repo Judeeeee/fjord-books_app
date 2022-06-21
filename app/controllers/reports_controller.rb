@@ -27,7 +27,7 @@ class ReportsController < ApplicationController
     @report.report_posted_user_id = current_user.id
     respond_to do |format|
       if @report.save
-        format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human)}
+        format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human) }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new, status: :unprocessable_entity }
