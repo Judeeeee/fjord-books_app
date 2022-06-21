@@ -4,11 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
 
-    if @comment.posted_user_name?
-      @comment.posted_user_name
-    else
-      @comment.posted_user_name = current_user.email
-    end
+    @comment.posted_user_name = current_user.email if @comment.posted_user_name.blank?
     @comment.save!
     redirect_to '/'
   end
