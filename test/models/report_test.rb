@@ -21,8 +21,7 @@ class ReportTest < ActiveSupport::TestCase
   test '日報作成時間を、yyyy/mm/dd表記にする' do
     alice = User.create!(email: 'alice@example', password: 'alice_password')
     alice_report = Report.create!(title: 'アリスの日報', content: 'アリスの日報本文だよ', user: alice)
-    today_time = Time.zone.now.to_date
 
-    assert_equal(alice_report.created_at.to_date, today_time)
+    assert alice_report.created_on
   end
 end
