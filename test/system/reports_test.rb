@@ -102,11 +102,13 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
   test 'move from create report page to reports page' do
     visit new_report_path
     click_on '戻る'
+    assert_selector 'h1', text: '日報'
   end
 
   test 'move from updating report page to reports page' do
     visit edit_report_url(@report)
     click_on '戻る'
+    assert_selector 'h1', text: '日報'
   end
 
   test 'visiting the report page' do
@@ -119,11 +121,13 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     visit report_url(@report)
     click_on '編集', match: :prefer_exact
     click_on '戻る'
+    assert_selector 'h1', text: '日報'
   end
 
   test 'move from updating report page to report page' do
     visit edit_report_url(@report)
     click_on '詳細', match: :first
     click_on '戻る'
+    assert_selector 'h1', text: '日報'
   end
 end
