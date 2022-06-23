@@ -25,6 +25,8 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: '今日は天気がよかった〜！'
     click_button '登録する'
     assert_text '日報が作成されました。'
+    assert Report.exists?(title: "アリスの日報")
+    assert_text 'アリスの日報'
     click_on '戻る'
   end
 
@@ -63,6 +65,8 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: 'きょうはてんきがよかった〜！'
     click_button '更新する'
     assert_text '日報が更新されました。'
+    assert Report.exists?(title: "ありすのにっぽう")
+    assert_text 'ありすのにっぽう'
     click_on '戻る'
   end
 
@@ -100,6 +104,7 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
       click_on '削除', match: :first
     end
     assert_text '日報が削除されました。'
+    assert_not Report.exists?(title: "MyString")
   end
 
   test 'move from create report page to reports page' do
