@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
     alice = User.create!(email: 'alice@example', password: 'alice_password')
     bob = User.create!(email: 'bob@example', password: 'bob_password')
 
+    assert_not alice.following?(bob)
     alice.follow(bob)
     assert alice.following?(bob)
   end
@@ -15,6 +16,7 @@ class UserTest < ActiveSupport::TestCase
     alice = User.create!(email: 'alice@example', password: 'alice_password')
     bob = User.create!(email: 'bob@example', password: 'bob_password')
 
+    assert_not bob.followed_by?(alice)
     alice.follow(bob)
     assert bob.followed_by?(alice)
   end
@@ -23,6 +25,7 @@ class UserTest < ActiveSupport::TestCase
     alice = User.create!(email: 'alice@example', password: 'alice_password')
     bob = User.create!(email: 'bob@example', password: 'bob_password')
 
+    assert_not alice.unfollow(bob)
     alice.follow(bob)
     alice.unfollow(bob)
     assert_not alice.following?(bob)
