@@ -7,7 +7,7 @@ class ReportTest < ActiveSupport::TestCase
     alice = User.create!(email: 'alice@example', password: 'alice_password')
     alice_report = Report.create!(title: 'アリスの日報', content: '本文だよ', user: alice)
 
-    assert_equal(alice.id, alice_report.user_id)
+    assert alice_report.editable?(alice)
   end
 
   test 'ログインユーザーが作成した日報以外は編集できない' do
