@@ -27,7 +27,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     assert_text '日報が作成されました。'
     assert Report.exists?(title: "アリスの日報")
     assert_text 'アリスの日報'
-    click_on '戻る'
   end
 
   test 'creating a Report but fill in title only' do
@@ -36,7 +35,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: ''
     click_button '登録する'
     assert_text '内容を入力してください'
-    click_on '戻る'
   end
 
   test 'creating a Report but fill in content only' do
@@ -45,7 +43,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: '今日は天気がよかった〜！'
     click_button '登録する'
     assert_text 'タイトルを入力してください'
-    click_on '戻る'
   end
 
   test 'creating a Report but do not fill in form' do
@@ -55,7 +52,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     click_button '登録する'
     assert_text 'タイトルを入力してください'
     assert_text '内容を入力してください'
-    click_on '戻る'
   end
 
   test 'updating a Report' do
@@ -67,7 +63,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     assert_text '日報が更新されました。'
     assert Report.exists?(title: "ありすのにっぽう")
     assert_text 'ありすのにっぽう'
-    click_on '戻る'
   end
 
   test 'updating a Report but fill in title only' do
@@ -76,7 +71,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: ''
     click_button '更新する'
     assert_text '内容を入力してください'
-    click_on '戻る'
   end
 
   test 'updating a Report but fill in content only' do
@@ -85,7 +79,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     fill_in '内容', with: 'きょうはてんきがよかった〜！'
     click_button '更新する'
     assert_text 'タイトルを入力してください'
-    click_on '戻る'
   end
 
   test 'updating a Report but do not fill in form' do
@@ -95,7 +88,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     click_button '更新する'
     assert_text 'タイトルを入力してください'
     assert_text '内容を入力してください'
-    click_on '戻る'
   end
 
   test 'destroying a Report' do
@@ -121,7 +113,6 @@ class ReportsTest < ApplicationSystemTestCase # rubocop:disable Metrics/ClassLen
     visit reports_url
     click_on '詳細', match: :first
     assert_selector 'h1', text: '日報の詳細'
-    click_on '戻る'
   end
 
   test 'move from report page to reports page' do
