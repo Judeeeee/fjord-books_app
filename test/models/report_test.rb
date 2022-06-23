@@ -15,7 +15,7 @@ class ReportTest < ActiveSupport::TestCase
     bob = User.create!(email: 'bob@example', password: 'bob_password')
     bob_report = Report.create!(title: 'ボブの日報', content: 'ボブの日報本文だよ', user: bob)
 
-    assert_not_equal(alice.id, bob_report.user_id)
+    assert_not bob_report.editable?(alice)
   end
 
   test '日報作成時間を、yyyy/mm/dd表記にする' do
